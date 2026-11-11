@@ -1,0 +1,73 @@
+---
+title: "Getting Started with treecrownr"
+author: "Ben Betteto"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with treecrownr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+The treecrownr package provides a simple way to calculate tree crown area using crown diameter measurements.
+
+Tree crown measurements are useful in environmental science, particularly for studying urban forests and analyzing remote sensing data.
+
+# Installing the Package
+
+Once the package has been installed, it can be loaded using:
+
+```{r}
+library(treecrownr)
+```
+
+# Calculating Tree Crown Area
+
+The `crown_area()` function calculates the area of a circular tree crown using its diameter in metres.
+
+The formula is:
+
+$$A = \pi \left(\frac{d}{2}\right)^2$$
+
+where A is crown area and d is crown diameter.
+
+For example, a tree with a crown diameter of 5 metres has an area of:
+
+```{r}
+crown_area(5)
+```
+
+The function can also calculate crown areas for multiple trees:
+
+```{r}
+crown_area(c(3, 5, 8))
+```
+
+# Example Dataset
+
+The package includes a synthetic dataset called `sample_trees`, containing six trees with species names and crown diameter measurements.
+
+Load the dataset:
+
+```{r}
+data("sample_trees")
+head(sample_trees)
+```
+
+# Calculating Crown Area for the Dataset
+
+We can use the crown diameter measurements to calculate crown area for every tree in the dataset.
+
+```{r}
+sample_trees$crown_area_m2 <-
+  crown_area(sample_trees$crown_diameter_m)
+
+print(sample_trees)
+```
+
+# Summary
+
+This vignette demonstrated how to use the treecrownr package to calculate individual tree crown areas and apply the function to an example dataset.
+
+These calculations can support further analysis of tree canopy characteristics.

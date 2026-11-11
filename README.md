@@ -1,0 +1,31 @@
+
+# treecrownr
+
+An R package for calculating tree crown area from diameter measurements.
+
+## Description
+
+This package provides a simple function for calculating the area of
+circular tree crowns. It also includes an example dataset containing six
+synthetic tree records.
+
+## Function
+
+The `crown_area()` function calculates crown area in square metres.
+
+``` r
+library(treecrownr)
+
+crown_area(5)
+```
+
+## Example Dataset
+
+``` r
+data("sample_trees")
+head(sample_trees)
+```
+
+## Author
+
+Ben Betteto

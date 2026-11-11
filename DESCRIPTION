@@ -1,0 +1,21 @@
+Package: treecrownr
+Type: Package
+Title: Tools for Tree Crown Measurements
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Ben", "Betteto",
+      email = "bettetob@mcmaster.ca",
+      role = c("aut", "cre")
+    )
+  )
+Description: Provides a function to calculate tree
+    crown area from crown diameter measurements.
+    Includes an example dataset of tree measurements.
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Config/roxygen2/version: 8.1.1
